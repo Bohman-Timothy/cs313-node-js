@@ -9,15 +9,15 @@
 
     <form method="get" action="/postage">
         <h2>Enter the weight of the item and the type of mail</h2>
-        <label for="weight">Weight:
+        <label for="weight">Weight (oz.):
             <input type="number" min="0" name="weight" id="weight">
-        </label>
+        </label><br/>
         <select name="mailType">
-            <option checked>Letters (Stamped)</option><br/>
-            <option>Letters (Metered)</option><br/>
-            <option>Large Envelopes (Flats)</option><br/>
-            <option>First-Class Package Service—Retail</option><br/>
-        </select>
+            <option checked>Letters (Stamped)</option>
+            <option>Letters (Metered)</option>
+            <option>Large Envelopes (Flats)</option>
+            <option>First-Class Package Service—Retail</option>
+        </select><br/>
         <input type="submit" value="Calculate Postage">
     </form>
 </body>

@@ -17,12 +17,84 @@ function calculatePostage(req, res) {
     var postage = 0;
     switch (mailType) {
         case "Letters (Stamped)":
+            if (weight <= 1)
+                postage = 0.50;
+            else if (weight <= 2)
+                postage = 0.71;
+            else if (weight <= 3)
+                postage = 0.92;
+            else if (weight <= 3.5)
+                postage = 1.13;
+            else
+                postage = "undefined";
             break;
         case "Letters (Metered)":
+            if (weight <= 1)
+                postage = 0.47;
+            else if (weight <= 2)
+                postage = 0.68;
+            else if (weight <= 3)
+                postage = 0.89;
+            else if (weight <= 3.54)
+                postage = 1.10;
             break;
         case "Large Envelopes (Flats)":
+            if (weight <= 1)
+                postage = 1.00;
+            else if (weight <= 2)
+                postage = 1.21;
+            else if (weight <= 3)
+                postage = 1.42;
+            else if (weight <= 4)
+                postage = 1.63;
+            else if (weight <= 5)
+                postage = 1.84;
+            else if (weight <= 6)
+                postage = 2.05;
+            else if (weight <= 7)
+                postage = 2.26;
+            else if (weight <= 8)
+                postage = 2.47;
+            else if (weight <= 9)
+                postage = 2.68;
+            else if (weight <= 10)
+                postage = 2.89;
+            else if (weight <= 11)
+                postage = 3.10;
+            else if (weight <= 12)
+                postage = 3.31;
+            else if (weight <= 13)
+                postage = 3.52;
+            else
+                postage = "undefined";
             break;
         case "First-Class Package Service—Retail":
+            if (weight <= 1)
+                postage = 3.50;
+            else if (weight <= 2)
+                postage = 3.50;
+            else if (weight <= 3)
+                postage = 3.50;
+            else if (weight <= 4)
+                postage = 3.50;
+            else if (weight <= 5)
+                postage = 3.75;
+            else if (weight <= 6)
+                postage = 3.75;
+            else if (weight <= 7)
+                postage = 3.75;
+            else if (weight <= 8)
+                postage = 3.75;
+            else if (weight <= 9)
+                postage = 4.10;
+            else if (weight <= 10)
+                postage = 4.45;
+            else if (weight <= 11)
+                postage = 4.80;
+            else if (weight <= 12)
+                postage = 5.15;
+            else if (weight <= 13)
+                postage = 5.50;
             break;
         default:
             console.log("No mail type was selected");
