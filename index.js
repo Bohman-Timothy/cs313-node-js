@@ -6,15 +6,15 @@ express()
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
-    .get('/postage', calculatePostage)
+    .get('/postage', calculateRate)
     .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-function calculatePostage(req, res) {
+function calculateRate(req, res) {
     console.log("Calculating postage");
     var weight = Number(req.query.weight);
     var mailType = req.query.mailType;
     console.log("Weight: " + weight + ", Mail Type: " + mailType);
-    var postage = 0;
+    var postage = "undefined";
     switch (mailType) {
         case "Letters (Stamped)":
             if (weight <= 1)
@@ -35,7 +35,7 @@ function calculatePostage(req, res) {
                 postage = 0.68;
             else if (weight <= 3)
                 postage = 0.89;
-            else if (weight <= 3.54)
+            else if (weight <= 3.5)
                 postage = 1.10;
             break;
         case "Large Envelopes (Flats)":
@@ -95,13 +95,21 @@ function calculatePostage(req, res) {
                 postage = 5.15;
             else if (weight <= 13)
                 postage = 5.50;
+            else
+                postage = "undefined";
             break;
         default:
             console.log("No mail type was selected");
     }
+    console.log("Postage: $" + postage);
     res.render('pages/postage', {
         weight: weight,
         mailType: mailType,
         postage: postage
     });
 }
+
+/* References
+*
+* Stack Overflow - Allow 2 decimal places in <input type="number">
+* https://stackoverflow.com/questions/34057595/allow-2-decimal-places-in-input-type-number/34057860 */
