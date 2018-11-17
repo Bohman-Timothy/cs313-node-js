@@ -12,12 +12,13 @@
         <label for="weight">Weight (oz.):
             <input type="number" min="0.1" step=".1" name="weight" id="weight">
         </label><br/>
-        <select name="mailType">
+        <label for="mailType">Mail Type:
+        <select name="mailType" id="mailType">
             <option checked>Letters (Stamped)</option>
             <option>Letters (Metered)</option>
             <option>Large Envelopes (Flats)</option>
             <option>First-Class Package Service—Retail</option>
-        </select><br/>
+        </select></label><br/>
         <input type="submit" value="Calculate Postage">
     </form>
 </body>
