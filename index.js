@@ -112,4 +112,7 @@ function calculateRate(req, res) {
 /* References
 *
 * Stack Overflow - Allow 2 decimal places in <input type="number">
-* https://stackoverflow.com/questions/34057595/allow-2-decimal-places-in-input-type-number/34057860 */
+* https://stackoverflow.com/questions/34057595/allow-2-decimal-places-in-input-type-number/34057860
+*
+* Stack Overflow -  Format number to always show 2 decimal places
+* https://stackoverflow.com/questions/6134039/format-number-to-always-show-2-decimal-places */
