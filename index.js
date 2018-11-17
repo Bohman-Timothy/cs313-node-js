@@ -115,4 +115,7 @@ function calculateRate(req, res) {
 * https://stackoverflow.com/questions/34057595/allow-2-decimal-places-in-input-type-number/34057860
 *
 * Stack Overflow -  Format number to always show 2 decimal places
-* https://stackoverflow.com/questions/6134039/format-number-to-always-show-2-decimal-places */
+* https://stackoverflow.com/questions/6134039/format-number-to-always-show-2-decimal-places
+*
+* Stack Overflow - How can I use if statement in ejs?
+* https://stackoverflow.com/questions/41202233/how-can-i-use-if-statement-in-ejs/41202290 */
