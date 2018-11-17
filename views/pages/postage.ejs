@@ -8,8 +8,11 @@
     <h1>Postage Calculation Results</h1>
     <p><strong>Weight:</strong> <%= weight %><br/>
         <strong>Mail Type:</strong> <%= mailType %><br/>
-		<strong>Postage:</strong> $<%= 
-			if (typeof postage == "number") { postage.toFixed(2) }
-			else { postage } %></p>
+		<strong>Postage:</strong> <% if (typeof postage == "number") { %>
+			$<%= postage.toFixed(2) %>
+			<% } %>
+			<% else { %>
+			<%= postage %>
+			<% } %></p>
 </body>
 </html>
