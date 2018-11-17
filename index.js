@@ -14,7 +14,7 @@ function calculateRate(req, res) {
     var weight = Number(req.query.weight);
     var mailType = req.query.mailType;
     console.log("Weight: " + weight + ", Mail Type: " + mailType);
-    var postage = "undefined";
+    var postage = 0;
     switch (mailType) {
         case "Letters (Stamped)":
             if (weight <= 1)
@@ -25,8 +25,8 @@ function calculateRate(req, res) {
                 postage = 0.92;
             else if (weight <= 3.5)
                 postage = 1.13;
-            else
-                postage = "undefined";
+            /*else
+                postage = "undefined";*/
             break;
         case "Letters (Metered)":
             if (weight <= 1)
@@ -65,8 +65,8 @@ function calculateRate(req, res) {
                 postage = 3.31;
             else if (weight <= 13)
                 postage = 3.52;
-            else
-                postage = "undefined";
+            /*else
+                postage = "undefined";*/
             break;
         case "First-Class Package Service—Retail":
             if (weight <= 1)
@@ -95,8 +95,8 @@ function calculateRate(req, res) {
                 postage = 5.15;
             else if (weight <= 13)
                 postage = 5.50;
-            else
-                postage = "undefined";
+            /*else
+                postage = "undefined";*/
             break;
         default:
             console.log("No mail type was selected");
