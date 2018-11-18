@@ -13,10 +13,11 @@ function calculateRate(req, res) {
     console.log("Calculating postage");
     var weight = Number(req.query.weight);
     var mailType = req.query.mailType;
-    console.log("Weight: " + weight + ", Mail Type: " + mailType);
     var postage = 0;
+    var weightUnit = "oz.";
     switch (mailType) {
         case "Letters (Stamped)":
+            weightUnit = "oz.";
             if (weight <= 1)
                 postage = 0.50;
             else if (weight <= 2)
@@ -29,6 +30,7 @@ function calculateRate(req, res) {
                 postage = "undefined";*/
             break;
         case "Letters (Metered)":
+            weightUnit = "oz.";
             if (weight <= 1)
                 postage = 0.47;
             else if (weight <= 2)
@@ -39,6 +41,7 @@ function calculateRate(req, res) {
                 postage = 1.10;
             break;
         case "Large Envelopes (Flats)":
+            weightUnit = "oz.";
             if (weight <= 1)
                 postage = 1.00;
             else if (weight <= 2)
@@ -69,6 +72,7 @@ function calculateRate(req, res) {
                 postage = "undefined";*/
             break;
         case "First-Class Package Service—Retail":
+            weightUnit = "oz.";
             if (weight <= 1)
                 postage = 3.50;
             else if (weight <= 2)
@@ -99,6 +103,7 @@ function calculateRate(req, res) {
                 postage = "undefined";*/
             break;
         case "Media Mail—Retail: Large Envelopes & Parcels":
+            weightUnit = "lbs.";
             if (weight <= 1)
                 postage = 2.66;
             else if (weight <= 2)
@@ -243,9 +248,11 @@ function calculateRate(req, res) {
         default:
             console.log("No mail type was selected");
     }
+    console.log("Weight: " + weight + " " + weightUnit + ", Mail Type: " + mailType);
     console.log("Postage: $" + postage);
     res.render('pages/postage', {
         weight: weight,
+        weightUnit: weightUnit,
         mailType: mailType,
         postage: postage
     });
