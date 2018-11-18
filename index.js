@@ -98,7 +98,7 @@ function calculateRate(req, res) {
             /*else
                 postage = "undefined";*/
             break;
-        case "Media Mail—Retail, Large Envelopes & Parcels":
+        case "Media Mail—Retail: Large Envelopes & Parcels":
             if (weight <= 1)
                 postage = 2.66;
             else if (weight <= 2)
