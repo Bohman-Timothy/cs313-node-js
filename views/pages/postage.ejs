@@ -8,7 +8,8 @@
     <h1>Postage Calculation Results</h1>
     <p><strong>Weight:</strong> <%= weight %> oz.<br/>
         <strong>Mail Type:</strong> <%= mailType %><br/>
-		<strong>Postage:</strong> <% if (postage != 0) { %> $ <% } %><%= postage.toFixed(2) %></p>
+		<strong>Postage:</strong> <% if (typeof postage == "number") { %> $ <%= postage.toFixed(2) %> <% } %>
+		<% else { %> postage <% } %></p>
 	</p>If postage is shown as $0.00, then the weight entered does not have a defined postage amount for the chosen mail type.</p>
 </body>
 </html>
