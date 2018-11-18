@@ -260,4 +260,8 @@ function calculateRate(req, res) {
 * https://stackoverflow.com/questions/6134039/format-number-to-always-show-2-decimal-places
 *
 * Stack Overflow - How can I use if statement in ejs?
-* https://stackoverflow.com/questions/41202233/how-can-i-use-if-statement-in-ejs/41202290 */
+* https://stackoverflow.com/questions/41202233/how-can-i-use-if-statement-in-ejs/41202290
+*
+* Stack Overflow - Can I use conditional statements with EJS templates (in JMVC)?
+* https://stackoverflow.com/questions/8216918/can-i-use-conditional-statements-with-ejs-templates-in-jmvc
+* */
